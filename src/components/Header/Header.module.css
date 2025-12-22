@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #fff;
+    color: rgba(2, 6, 12, .9);
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+}
+
+.navBar {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.navList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 24px;
+    margin-left: 24px;
+    flex-grow: 1;
+}
+
+
+.navItemsText {
+    margin-left: 8px;
+    margin-right: 8px;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(2, 6, 12, .9);
+}
