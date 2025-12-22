@@ -1,6 +1,6 @@
-export default function Footer() {
+export default function Footer({ className }) {
     return (
-        <footer>
+        <footer className={className}>
             <div className="footer-content">
                 <p>© 2024 Swiggy Clone. All rights reserved.</p>
             </div>
