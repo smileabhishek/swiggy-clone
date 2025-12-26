@@ -7,7 +7,7 @@ export default function ProfileIcon({ size = 24, className = "" }) {
             width={size}
             fill="#686b78"
             stroke="#black"
-            stroke-width="3"
+            strokeWidth="3"
             aria-hidden="true"
             focusable="true"
             xmlns="http://www.w3.org/2000/svg"
