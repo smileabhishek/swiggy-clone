@@ -1,7 +1,7 @@
 export default function SearchIcon({ size = 24, className = "" }) {
     return (
         <svg
-            class={className}
+            className={className}
             viewBox="0 0 32 32"
             height={size}
             width={size}
