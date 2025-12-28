@@ -33,9 +33,7 @@ a {
 .navItemsText {
     margin-left: 8px;
     margin-right: 8px;
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
+    font-family: Gilroy;
     font-weight: 400;
     color: rgba(2, 6, 12, .9);
 }
