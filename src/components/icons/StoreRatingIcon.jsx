@@ -8,8 +8,8 @@ const StoreRatingIcon = ({ size = 20 }) => {
             viewBox="0 0 20 20"
             fill="none"
             aria-hidden="true"
-            strokeColor="rgba(2, 6, 12, 0.92)"
-            fillColor="rgba(2, 6, 12, 0.92)"
+            strokecolor="rgba(2, 6, 12, 0.92)"
+            fillcolor="rgba(2, 6, 12, 0.92)"
         >
             <circle
                 cx="10"
@@ -30,8 +30,8 @@ const StoreRatingIcon = ({ size = 20 }) => {
                     y2="19"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#21973B"></stop>
-                    <stop offset="1" stop-color="#128540"></stop>
+                    <stop stopColor="#21973B"></stop>
+                    <stop offset="1" stopColor="#128540"></stop>
                 </linearGradient>
             </defs>
         </svg>
