@@ -48,7 +48,7 @@ export default function RestaurantCard({ className, restaurantData }) {
                             className={`${styles.restaurantCardDiscriptionContainer}`}
                         >
                             <div className={`${styles.restaurantCousineText}`}>
-                                {restaurantInfo?.cuisines.join(", ")}
+                                {restaurantInfo?.cuisines?.join(", ") || ""}
                             </div>
                             <div className={`${styles.restaurantLocationText}`}>
                                 {restaurantInfo?.locality}
