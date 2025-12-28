@@ -53,9 +53,9 @@
     letter-spacing: -0.5px;
     padding: 0 12px 8px 12px;
     color: rgba(255, 255, 255, 0.92);
-    overflow: hidden;
-    overflow-wrap: break-word;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
 }
 
 .cardInfo {
@@ -94,9 +94,9 @@
     color: rgba(2, 6, 12, 0.92);
     overflow: hidden;
     width: 100%;
-    display: -webkit-box;
-    overflow-wrap: break-word;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
 }
 
 .restaurantCardSubtextContainer {
@@ -158,10 +158,10 @@
     letter-spacing: -0.4px;
     color: rgba(2, 6, 12, 0.6);
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
     width: 100%;
-    display: -webkit-box;
-    overflow-wrap: break-word;
-    -webkit-box-orient: vertical;
 }
 
 .restaurantLocationText {
@@ -173,7 +173,8 @@
     color: rgba(2, 6, 12, 0.6);
     overflow: hidden;
     width: 100%;
-    display: -webkit-box;
-    overflow-wrap: break-word;
-    -webkit-box-orient: vertical;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }

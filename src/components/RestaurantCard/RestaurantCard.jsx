@@ -1,7 +1,9 @@
 import styles from "./RestaurantCard.module.css";
 import StoreRatingIcon from "../icons/StoreRatingIcon";
+import { IMG_URL } from "../../utils/constants";
 const BULLET_POINT = "\u2022";
-export default function RestaurantCard({ className }) {
+export default function RestaurantCard({ className, restaurantData }) {
+    const restaurantInfo = restaurantData?.info;
     return (
         <div
             className={`restaurant-card ${styles.restaurantCard} ${className}`}
@@ -11,14 +13,20 @@ export default function RestaurantCard({ className }) {
                     <div className={styles.cardImageContainer}>
                         <img
                             className={`${styles.cardImg}`}
-                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/7/10/3fa8d5d2-9c38-46ad-b01a-e19a8760c826_1126162.jpg"
+                            src={IMG_URL + restaurantInfo?.cloudinaryImageId}
                             alt=""
                         />
-                        <div className={`${styles.offersText}`}>50% Off</div>
+                        <div className={`${styles.offersText}`}>
+                            {(restaurantInfo?.aggregatedDiscountInfoV3
+                                ?.header ?? "") +
+                                " " +
+                                (restaurantInfo?.aggregatedDiscountInfoV3
+                                    ?.subHeader ?? "")}
+                        </div>
                     </div>
                     <div className={`${styles.cardInfo}`}>
                         <div className={`${styles.restaurantName}`}>
-                            Domino's Pizza
+                            {restaurantInfo?.name}
                         </div>
                         <div
                             className={`${styles.restaurantCardSubtextContainer}`}
@@ -30,19 +38,20 @@ export default function RestaurantCard({ className }) {
                                 <span
                                     className={`${styles.restaurantRatingText}`}
                                 >
-                                    4.3{` ${BULLET_POINT} `}
+                                    {restaurantInfo?.avgRatingString}
+                                    {` ${BULLET_POINT} `}
                                 </span>
-                                20&#45;35 mins
+                                {restaurantInfo?.sla?.slaString}
                             </div>
                         </div>
                         <div
                             className={`${styles.restaurantCardDiscriptionContainer}`}
                         >
                             <div className={`${styles.restaurantCousineText}`}>
-                                Pizza, Fast Food
+                                {restaurantInfo?.cuisines.join(", ")}
                             </div>
                             <div className={`${styles.restaurantLocationText}`}>
-                                HSR, Banglore
+                                {restaurantInfo?.locality}
                             </div>
                         </div>
                     </div>
