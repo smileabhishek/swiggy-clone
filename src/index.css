@@ -1,0 +1,33 @@
+/* ===== Gilroy Font===== */
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
