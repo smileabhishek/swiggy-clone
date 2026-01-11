@@ -1,4 +1,5 @@
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
+import RestaurantCardShimmer from "../RestaurantCard/RestaurantCardShimmer";
 import styles from "./RestaurantGrid.module.css";
 // import restaurantsList from "../../assets/restaurantData.json";
 import { useState, useEffect } from "react";
@@ -6,6 +7,7 @@ import { RestaurantApi_URL } from "../../utils/constants";
 const RestaurantGrid = () => {
     // swiggy API call
     const [restaurants, setRestaurants] = useState([]);
+    const ShimmerArray = new Array(8).fill(0);
     useEffect(() => {
         async function fetchData() {
             const res = await fetch(RestaurantApi_URL);
@@ -25,12 +27,16 @@ const RestaurantGrid = () => {
             <h2>Restaurants with online food delivery in Bangalore</h2>
             <div className={styles.restaurantGridContainer}>
                 {/* {restaurantsList.map((restaurant) => ( */}
-                {restaurants.map((restaurant) => (
-                    <RestaurantCard
-                        key={restaurant.info.id}
-                        restaurantData={restaurant}
-                    />
-                ))}
+                {restaurants.length === 0
+                    ? ShimmerArray.map((_, index) => (
+                          <RestaurantCardShimmer key={index} />
+                      ))
+                    : restaurants.map((restaurant) => (
+                          <RestaurantCard
+                              key={restaurant.info.id}
+                              restaurantData={restaurant}
+                          />
+                      ))}
             </div>
         </div>
     );
