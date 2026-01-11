@@ -6,8 +6,10 @@ function Header({ className }) {
     return (
         <header className={`${styles.header} ${className ?? ""}`}>
             <nav className={styles.navBar}>
-                <div>
-                    <SwiggyIcon size={50} />
+                <div className={styles.logoLink}>
+                    <a href="/">
+                        <SwiggyIcon size={50} />
+                    </a>
                 </div>
 
                 <ul className={styles.navList}>
