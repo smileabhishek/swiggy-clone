@@ -12,10 +12,10 @@ const RestaurantGrid = () => {
         async function fetchData() {
             const res = await fetch(RestaurantApi_URL);
             const data = await res.json();
-            setRestaurants(
-                data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-                    ?.restaurants
-            );
+            const restaurnatList =
+                data?.data?.data?.cards[1]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants;
+            setRestaurants([restaurnatList].slice(0, 8)); // limiting to 8 restaurants
         }
         fetchData();
     }, []);
