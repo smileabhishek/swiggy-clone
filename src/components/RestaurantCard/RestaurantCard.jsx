@@ -1,6 +1,7 @@
 import styles from "./RestaurantCard.module.css";
 import StoreRatingIcon from "../icons/StoreRatingIcon";
-import { IMG_URL } from "../../utils/constants";
+import { Link } from "react-router-dom";
+import { IMG_URL, FALLBACK_IMG } from "../../utils/constants";
 const BULLET_POINT = "\u2022";
 export default function RestaurantCard({ className, restaurantData }) {
     const restaurantInfo = restaurantData?.info;
@@ -8,13 +9,23 @@ export default function RestaurantCard({ className, restaurantData }) {
         <div
             className={`restaurant-card ${styles.restaurantCard} ${className}`}
         >
-            <a href="/restaurant" className={styles.cardLink}>
+            <Link
+                to={`/restaurants/restaurant/${restaurantInfo?.id}`}
+                className={styles.cardLink}
+            >
                 <div className={styles.cardGrid}>
                     <div className={styles.cardImageContainer}>
                         <img
                             className={`${styles.cardImg}`}
                             src={IMG_URL + restaurantInfo?.cloudinaryImageId}
-                            alt=""
+                            alt={restaurantInfo?.name ?? "restaurant"}
+                            onError={(e) => {
+                                const img = e.currentTarget;
+                                if (!img.dataset.fallback) {
+                                    img.src = FALLBACK_IMG;
+                                    img.dataset.fallback = "true";
+                                }
+                            }}
                         />
                         <div className={`${styles.offersText}`}>
                             {(restaurantInfo?.aggregatedDiscountInfoV3
@@ -56,7 +67,7 @@ export default function RestaurantCard({ className, restaurantData }) {
                         </div>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }

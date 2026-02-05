@@ -1,4 +1,5 @@
 import RestaurantGrid from "../components/RestaurantGrid/RestauratnGrid";
+import RestaurantPage from "../pages/RestaurantPage.jsx";
 import Layout from "./layout.jsx";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 export const router = createBrowserRouter([
@@ -15,8 +16,8 @@ export const router = createBrowserRouter([
                 element: <RestaurantGrid />,
             },
             {
-                path: ":id",
-                element: <div>Restaurant Details Page</div>,
+                path: "restaurant/:id",
+                element: <RestaurantPage />,
             },
         ],
     },
