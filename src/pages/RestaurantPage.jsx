@@ -5,7 +5,8 @@ import MenuAccordion from "../components/MenuAccordion/MenuAccordion";
 const RestaurantPage = () => {
     const { id: restaurantId } = useParams();
     const [restaurantData, setRestaurantData] = useState(null);
-    // console.log(MENU_API_URL + restaurantId);
+
+    // Fetch the restaurant menu data when the component mounts or when the restaurantId changes
     useEffect(() => {
         if (!restaurantId) return;
 
@@ -22,21 +23,21 @@ const RestaurantPage = () => {
 
         fetchMenu();
     }, [restaurantId]);
+
+    // we can also add a loading state to show a spinner or message while fetching data
     if (!restaurantData) {
         return <div>Loading...</div>;
     }
+    // The menu data is nested deep within the restaurantData object, so we need to navigate through the structure to access it
     const menuData =
         restaurantData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
             ?.cards;
-    // console.log(restaurantData);
 
-    // console.log(menuData);
     return (
         <div>
             {restaurantId} Page
             {menuData && menuData.length > 0 ? (
                 menuData.map((menuCategory, index) => {
-                    // console.log(menuCategory);
                     return (
                         menuCategory && (
                             <MenuAccordion

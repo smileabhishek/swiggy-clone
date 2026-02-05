@@ -1,7 +1,6 @@
 import MenuCard from "../MenuCard/MenuCard";
 const MenuAccordion = ({ menuCategory }) => {
-    console.log(menuCategory);
-    // return <div>{menuCategory?.card?.card?.title ?? "Menu"}</div>;
+    // we need to check if the menuCategory has the expected structure before trying to access its properties. If the structure is different, we can return a fallback UI or an empty div.
     if (menuCategory.card === undefined) return <div></div>;
     return (
         <div>
@@ -12,8 +11,6 @@ const MenuAccordion = ({ menuCategory }) => {
                 <div>No items available.</div>
             )}
             {menuCategory?.card?.card?.itemCards?.map((item, index) => {
-                // if (!item.card || !item.card.card) return null;
-                // console.log(item.card.info);
                 return (
                     <MenuCard
                         key={item?.card?.info?.id ?? index}

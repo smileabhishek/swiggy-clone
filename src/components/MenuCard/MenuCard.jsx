@@ -1,7 +1,5 @@
 import { IMG_URL } from "../../utils/constants";
 const MenuCard = ({ foodItem }) => {
-    console.log(foodItem);
-    // if (foodItem.card === undefined) return <div></div>;
     return (
         <div className="menuItemCard">
             <div className="menuItemDetails">
