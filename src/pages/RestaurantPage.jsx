@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MENU_API_URL } from "../utils/constants";
 import MenuAccordion from "../components/MenuAccordion/MenuAccordion";
-
 const RestaurantPage = () => {
     const { id: restaurantId } = useParams();
     const [restaurantData, setRestaurantData] = useState(null);
